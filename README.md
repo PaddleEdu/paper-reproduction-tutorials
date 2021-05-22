@@ -1,25 +1,32 @@
 # Transformer-CV-models
 Recent Transformer-based CV and related works on PaddlePaddle 2.0
 
-## 复现候选Paper
+## 1. 复现教程
+
+- [模型复现方法总结](https://github.com/PaddleEdu/Transformer-CV-models/blob/main/docs/model_reproduction_skills.md)
+- [常用功能模块](https://github.com/PaddleEdu/Transformer-CV-models/blob/main/docs/utils.md)
+
+欢迎大家贡献复现过程中的技巧。
+
+## 2. 复现候选Paper
 
 复现Paper List如下，分两部分：Vision Transformer系列、其他CV模型
 
-### 1. Vision Transformer系列模型
+### 2.1 Vision Transformer系列模型
 
 | 编号 | 论文 | 参考实现 | 数据集 | 验收要求 |
 | ---| --- | --- | --- | --- |
 | 01 | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [DETR](https://github.com/facebookresearch/detr) | [COCO2017](https://cocodataset.org/#download) | 在指定数据集上，DETR-R50: mAP >= 42.0; DETR-DC5-R50: mAP>=43.3 |
 | 02 | [DEFORMABLE DETR: DEFORMABLE TRANSFORMERS FOR END-TO-END OBJECT DETECTION](https://arxiv.org/abs/2010.04159) | [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR) | [COCO2017](https://cocodataset.org/#download) | 在指定数据集上，论文中不带两个加强trick的版本 >= 43.8mAP |
 | 03 | [Generative Adversarial Transformers](https://arxiv.org/pdf/2103.01209.pdf) | [GANsformer](https://github.com/dorarad/gansformer) | CLEVR,LSUN-Bedroom ,FFHQ,Cityscapes任选其一 | CLEVR:9.24  LSUN-Bedroom: 6.15  FFHQ:7.42  Cityscapes:5.23 |
-| 04 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [Swin-Transformer](https://github.com/microsoft/Swin-Transformer) | 待更新 | 待更新 |
+| 04 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [Swin-Transformer](https://github.com/microsoft/Swin-Transformer) | [COCO2017](https://cocodataset.org/#download) | cascade mask rcnn + swin B, bbox mAP=51.9 mask mAP=45.0 |
 | 05 | [Co-Scale Conv-Attentional Image Transformers](https://arxiv.org/abs/2104.06399) | [CoaT](https://github.com/mlpc-ucsd/CoaT) | [ILSVRC2012](http://image-net.org/challenges/LSVRC/2012/2012-downloads)  | CoaT-Lite Small Acc@1 81.9 |
 | 06 | [Token Labeling: Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet](https://arxiv.org/abs/2104.10858) | [TokenLabeling](https://github.com/zihangJiang/TokenLabeling) | [ILSVRC2012](http://image-net.org/challenges/LSVRC/2012/2012-downloads)  | LV-ViT-M(448) Acc@1 85.5 |
 | 07 | [Big Transfer (BiT): General Visual Representation Learning](https://arxiv.org/abs/1912.11370) | [big_transfer](https://github.com/google-research/big_transfer) | [ILSVRC2012](http://image-net.org/challenges/LSVRC/2012/2012-downloads) | Bit-L Acc@top1 87.54 |
 | 08 | [Going deeper with Image Transformers](https://arxiv.org/abs/2103.17239) | [Cait](https://github.com/facebookresearch/deit) | [ILSVRC2012](http://image-net.org/challenges/LSVRC/2012/2012-downloads) | CAIT-XS-24 Acc@top1 84.1 |
 | 09 | [TransReID: Transformer-based Object Re-Identification](https://arxiv.org/pdf/2102.04378.pdf) | [TransReID](https://github.com/heshuting555/TransReID) | MSMT17 | mAP 69.4% / R1 86.2% |
 
-### 2. 其他CV模型(持续更新中)
+### 2.2 其他CV模型(持续更新中)
 
 | 编号 | 论文 | 参考实现 | 数据集 | 验收要求 |
 | ---| --- | --- | --- | --- |
