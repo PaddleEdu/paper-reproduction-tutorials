@@ -147,7 +147,7 @@ array([[ 0.47143516],
 **NumPy**
 ```python
 import numpy as np
-import torch
+import paddle
 
 np.random.seed(1234)
 A_numpy = np.random.randn(10, 4)
