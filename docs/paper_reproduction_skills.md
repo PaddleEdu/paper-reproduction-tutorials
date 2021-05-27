@@ -231,7 +231,7 @@ def DataLoader(dataset, batch_size, shuffle=True, drop_last=False):
     return reader
 ```
 
-**本项目的`nms`函数**
+**自定义`nms`函数**
 ```python
 """
 Based on numpy NMS
