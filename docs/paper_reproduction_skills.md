@@ -170,7 +170,11 @@ paddle.masked_select(A_paddle, A_bool.reshape([-1, 1]).astype('float32').multipl
 **手写函数与方法**
 [PaddleIssues](https://github.com/PaddlePaddle/Paddle/issues/32811)，[PSENet](https://aistudio.baidu.com/aistudio/projectdetail/1899550)，**PSENet/models/utils/fuse_conv_bn.py**
 ```python
-class Identity(Layer):
+import paddle
+import paddle.nn as nn
+
+
+class Identity(nn.Layer):
     r"""A placeholder identity operator that is argument-insensitive.
 
     Args:
@@ -180,7 +184,7 @@ class Identity(Layer):
     Examples::
 
         >>> m = Identity(54, unused_argument1=0.1, unused_argument2=False)
-        >>> input = paddle.randn(128, 20)
+        >>> input = paddle.randn([128, 20])
         >>> output = m(input)
         >>> print(output.shape)
         [128, 20]
@@ -189,8 +193,9 @@ class Identity(Layer):
     def __init__(self, *args, **kwargs):
         super(Identity, self).__init__()
 
-    def forward(self, input: Tensor) -> Tensor:
+    def forward(self, input: paddle.Tensor) -> paddle.Tensor:
         return input
+
 ```
 
 **写字典类型数据读取函数**
