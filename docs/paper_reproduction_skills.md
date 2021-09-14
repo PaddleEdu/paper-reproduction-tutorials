@@ -15,17 +15,17 @@
 **Pytorch**
 ```python
 for m in self.modules():
-if isinstance(m,nn.Conv2d):
-    nn.init.kaiming_uniform_(m.weight, a=1)
-    nn.init.constant_(m.bias, 0)   
+    if isinstance(m,nn.Conv2d):
+        nn.init.kaiming_uniform_(m.weight, a=1)
+        nn.init.constant_(m.bias, 0)   
 ```
 
 **Paddle**
 ```python
 for m in self.sublayers():
-if isinstance(m,nn.Conv2D):
-    m.weight = paddle.create_parameter(shape=m.weight.shape, dtype='float32', default_initializer=paddle.nn.initializer.KaimingUniform())
-    m.bias = paddle.create_parameter(shape=m.bias.shape, dtype='float32', default_initializer=paddle.nn.initializer.Constant(0.0)) 
+    if isinstance(m,nn.Conv2D):
+        m.weight = paddle.create_parameter(shape=m.weight.shape, dtype='float32', default_initializer=paddle.nn.initializer.KaimingUniform())
+        m.bias = paddle.create_parameter(shape=m.bias.shape, dtype='float32', default_initializer=paddle.nn.initializer.Constant(0.0)) 
 ```
 **Pytorch**
 ```python
